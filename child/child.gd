@@ -10,14 +10,20 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	# Add the gravity.
-	if Input.is_action_pressed("right"):
-		position.x +=10
-	if Input.is_action_pressed("left"):
-		position.x -=10 
-	if Input.is_action_pressed("up"):
-		position.y -=10 
-	if Input.is_action_pressed("down"):
-		position.y +=10
+	var direction = Input.get_axis("left", "right")
+	
+	if direction:
+		velocity.x = direction  * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	var d = Input.get_axis("down","up")
+	
+	if d:
+		velocity.y = d  * -SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+ 
 
 	move_and_slide()
 
