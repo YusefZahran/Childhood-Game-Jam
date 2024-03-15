@@ -1,13 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7vciq3iwyost"]
+[gd_scene load_steps=5 format=3 uid="uid://c7vciq3iwyost"]
 
 [ext_resource type="PackedScene" uid="uid://c8wa0bdw03q6w" path="res://child/child.tscn" id="1_itf0x"]
 [ext_resource type="PackedScene" uid="uid://b8q87csutxirr" path="res://game/game.tscn" id="2_5t1tw"]
+[ext_resource type="Texture2D" uid="uid://5yy8pupja2bh" path="res://Child.png" id="2_6mpsc"]
+[ext_resource type="Texture2D" uid="uid://scia4diwfyud" path="res://Police Car.png" id="3_ubmvx"]
 
 [node name="World" type="Node2D"]
 position = Vector2(-1, -1)
 
 [node name="child" parent="." instance=ExtResource("1_itf0x")]
 
+[node name="Sprite2D" parent="child" index="0"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_6mpsc")
+
 [node name="game" parent="." instance=ExtResource("2_5t1tw")]
 
+[node name="Sprite2D" parent="game" index="0"]
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_ubmvx")
+vframes = 4
+
 [connection signal="body_entered" from="game" to="child" method="_on_game_body_entered"]
+
+[editable path="child"]
+[editable path="game"]
