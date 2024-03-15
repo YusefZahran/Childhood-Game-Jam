@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fqbxv0h2n4nh"
-path="res://.godot/imported/Child.png-912251d7f1229887c23027efa20bbb99.ctex"
+uid="uid://duk22q3p5r3bw"
+path="res://.godot/imported/car-forward.png-571a5a435f0701326035dc11551056cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Child.png"
-dest_files=["res://.godot/imported/Child.png-912251d7f1229887c23027efa20bbb99.ctex"]
+source_file="res://car-forward.png"
+dest_files=["res://.godot/imported/car-forward.png-571a5a435f0701326035dc11551056cb.ctex"]
 
 [params]
 

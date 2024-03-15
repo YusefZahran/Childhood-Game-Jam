@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://scia4diwfyud"
-path="res://.godot/imported/Police Car.png-ffd827125a45707b5d747e902ca140e5.ctex"
+path="res://.godot/imported/Police Car.png-5e54b55aa028f19e948e808ca6a1c4dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Police Car.png"
-dest_files=["res://.godot/imported/Police Car.png-ffd827125a45707b5d747e902ca140e5.ctex"]
+source_file="res://assets/Police Car.png"
+dest_files=["res://.godot/imported/Police Car.png-5e54b55aa028f19e948e808ca6a1c4dd.ctex"]
 
 [params]
 

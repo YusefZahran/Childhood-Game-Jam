@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c8wa0bdw03q6w" path="res://child/child.tscn" id="1_itf0x"]
 [ext_resource type="PackedScene" uid="uid://b8q87csutxirr" path="res://game/game.tscn" id="2_5t1tw"]
-[ext_resource type="Texture2D" uid="uid://5yy8pupja2bh" path="res://Child.png" id="2_6mpsc"]
-[ext_resource type="Texture2D" uid="uid://scia4diwfyud" path="res://Police Car.png" id="3_ubmvx"]
+[ext_resource type="Texture2D" path="res://Child.png" id="2_6mpsc"]
+[ext_resource type="Texture2D" path="res://Police Car.png" id="3_ubmvx"]
 
 [node name="World" type="Node2D"]
 position = Vector2(-1, -1)
