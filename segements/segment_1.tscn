@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dygdljn57s6ms"]
+
+[ext_resource type="Texture2D" uid="uid://cbtb0ii2w5w3d" path="res://assets/tilemap.png" id="1_xueo2"]
+
+[node name="segment1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-16, 0)
+texture = ExtResource("1_xueo2")
+hframes = 27
+vframes = 18
+frame = 461
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(16, 0)
+texture = ExtResource("1_xueo2")
+hframes = 27
+vframes = 18
+frame = 463
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_xueo2")
+hframes = 27
+vframes = 18
+frame = 462
