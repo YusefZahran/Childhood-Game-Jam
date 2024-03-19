@@ -1,13 +1,19 @@
 extends Node2D
 
 @export var segments : Array[PackedScene] = []
-var amnt =10
-@export var offest = 50
+@onready var pos : Array[Marker2D] = [$"Far Right" , $"Middle Right", $"Middle Right" , $"Far Left"]
+@onready var Car = preload("res://civilian_car.tscn")
+#var car_positions : Array[int] = [0,1,2,3] 
+var amnt =20
+@export var offset = 20
 var rng = RandomNumberGenerator.new()
+@export var camera : Camera2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for n in amnt:
-		spawnSegment(n*offest)
+	for n in range(-7,amnt):
+		spawnSegment(-(n*offset))
+	spawnCars()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,3 +26,16 @@ func spawnSegment(n):
 	var instance = segments[num].instantiate()
 	instance.position.y = n
 	add_child(instance)
+	
+func spawnCars():
+	var pos1 = pos.pick_random()
+	var pos2 = pos.pick_random()
+	while(pos2 == pos1):
+		pos2 = pos.pick_random()
+	var instance1 = Car.instantiate()
+	instance1.position = pos1.position
+	add_child(instance1)
+	var instance2 = Car.instantiate()
+	instance2.position = pos2.position
+	add_child(instance2)
+	
