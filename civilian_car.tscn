@@ -7,6 +7,7 @@
 size = Vector2(28, 42)
 
 [node name="Civilian Car" type="StaticBody2D"]
+z_index = 5
 script = ExtResource("1_yaw8k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

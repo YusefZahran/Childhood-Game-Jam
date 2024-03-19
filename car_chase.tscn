@@ -12,7 +12,7 @@ camera = NodePath("Camera2D")
 
 [node name="Police Car" parent="." instance=ExtResource("3_xu5jf")]
 z_index = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.45, 0.45)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
@@ -31,3 +31,9 @@ position = Vector2(-25, -233)
 
 [node name="Far Left" type="Marker2D" parent="."]
 position = Vector2(-69, -233)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

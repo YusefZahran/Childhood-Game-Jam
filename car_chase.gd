@@ -1,13 +1,15 @@
 extends Node2D
 
 @export var segments : Array[PackedScene] = []
-@onready var pos : Array[Marker2D] = [$"Far Right" , $"Middle Right", $"Middle Right" , $"Far Left"]
+@onready var pos : Array[Marker2D] = [$"Far Right" , $"Middle Right", $"Middle Left" , $"Far Left"]
 @onready var Car = preload("res://civilian_car.tscn")
-#var car_positions : Array[int] = [0,1,2,3] 
+@onready var timer : Timer = $"Timer"
+
 var amnt =20
 @export var offset = 20
 var rng = RandomNumberGenerator.new()
 @export var camera : Camera2D
+@onready var speed =255
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for n in range(-7,amnt):
@@ -39,3 +41,10 @@ func spawnCars():
 	instance2.position = pos2.position
 	add_child(instance2)
 	
+
+
+func _on_timer_timeout():
+	spawnCars()
+	if (speed < 600):
+		speed += 10
+		timer.wait_time -= 0.08

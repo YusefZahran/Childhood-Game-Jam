@@ -4,6 +4,7 @@ extends Node2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #	print(position)
+	speed = level.speed
 	position.y += speed * delta
 	if global_position.y > 250:
 #		print("reached bottom")
