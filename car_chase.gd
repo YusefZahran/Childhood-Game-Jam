@@ -4,6 +4,7 @@ extends Node2D
 @onready var pos : Array[Marker2D] = [$"Far Right" , $"Middle Right", $"Middle Left" , $"Far Left"]
 @onready var Car = preload("res://civilian_car.tscn")
 @onready var timer : Timer = $"Timer"
+@onready var score = 0
 
 var amnt =20
 @export var offset = 20
@@ -47,4 +48,4 @@ func _on_timer_timeout():
 	spawnCars()
 	if (speed < 600):
 		speed += 10
-		timer.wait_time -= 0.08
+		timer.wait_time -= 0.02

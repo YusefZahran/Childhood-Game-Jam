@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3dduj02yv8lj"]
+[gd_scene load_steps=8 format=3 uid="uid://c3dduj02yv8lj"]
 
 [ext_resource type="Script" path="res://car_chase.gd" id="1_hw11o"]
 [ext_resource type="PackedScene" uid="uid://dygdljn57s6ms" path="res://segements/segment_1.tscn" id="2_0bisj"]
 [ext_resource type="PackedScene" uid="uid://caq4ujq27osce" path="res://police_car.tscn" id="3_xu5jf"]
+[ext_resource type="Script" path="res://despawn area.gd" id="4_y20er"]
+[ext_resource type="PackedScene" uid="uid://cm7a1o03w3tm8" path="res://civilian_car.tscn" id="5_n66x6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv1b5"]
+size = Vector2(387, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhn7b"]
+size = Vector2(118, 76)
 
 [node name="Car Chase" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_hw11o")
@@ -15,7 +23,7 @@ z_index = 2
 scale = Vector2(0.45, 0.45)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="segment1" parent="." instance=ExtResource("2_0bisj")]
 position = Vector2(0, -233)
@@ -33,7 +41,26 @@ position = Vector2(-25, -233)
 position = Vector2(-69, -233)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
+[node name="despawn area" type="Area2D" parent="."]
+position = Vector2(0, 230)
+script = ExtResource("4_y20er")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="despawn area"]
+position = Vector2(-0.5, 46.5)
+shape = SubResource("RectangleShape2D_yv1b5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(438, 164)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_fhn7b")
+
+[node name="Civilian Car" parent="." instance=ExtResource("5_n66x6")]
+position = Vector2(425, 3)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_shape_entered" from="despawn area" to="Civilian Car" method="_on_despawn_area_area_shape_entered"]
+[connection signal="body_entered" from="despawn area" to="despawn area" method="_on_body_entered"]

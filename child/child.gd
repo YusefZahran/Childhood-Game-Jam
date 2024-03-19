@@ -16,4 +16,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_game_body_entered(body):
-	print("HI")
+	get_tree().change_scene_to_file("res://car_chase.tscn")

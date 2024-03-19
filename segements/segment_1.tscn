@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dygdljn57s6ms"]
 
 [ext_resource type="Script" path="res://segements/segment.gd" id="1_x3dlr"]
-[ext_resource type="Texture2D" uid="uid://cbtb0ii2w5w3d" path="res://assets/tilemap.png" id="1_xueo2"]
+[ext_resource type="Texture2D" uid="uid://coc6lqn0mus26" path="res://assets/tilemap_packed.png" id="2_bj2lg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2e3l5"]
 size = Vector2(16, 16)
@@ -15,8 +15,8 @@ speed = 54
 
 [node name="Sprite2D" type="Sprite2D" parent="Road"]
 texture_filter = 1
-position = Vector2(-39, 0)
-texture = ExtResource("1_xueo2")
+position = Vector2(-40, 0)
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 461
@@ -26,7 +26,8 @@ position = Vector2(-55, 1)
 
 [node name="Sprite2D8" type="Sprite2D" parent="Road/Pavement"]
 texture_filter = 1
-texture = ExtResource("1_xueo2")
+position = Vector2(-1, -1)
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 37
@@ -41,8 +42,8 @@ position = Vector2(-55, 1.5)
 
 [node name="Sprite2D9" type="Sprite2D" parent="Road/Pavement2"]
 texture_filter = 1
-position = Vector2(109.5, -0.5)
-texture = ExtResource("1_xueo2")
+position = Vector2(111, -1.5)
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 35
@@ -54,8 +55,8 @@ shape = SubResource("RectangleShape2D_2e3l5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Road"]
 texture_filter = 1
-position = Vector2(-23.5, 0)
-texture = ExtResource("1_xueo2")
+position = Vector2(-24, 0)
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 462
@@ -63,7 +64,7 @@ frame = 462
 [node name="Sprite2D4" type="Sprite2D" parent="Road"]
 texture_filter = 1
 position = Vector2(-8, 0)
-texture = ExtResource("1_xueo2")
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 463
@@ -71,23 +72,23 @@ frame = 463
 [node name="Sprite2D3" type="Sprite2D" parent="Road"]
 texture_filter = 1
 position = Vector2(8, 0)
-texture = ExtResource("1_xueo2")
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 461
 
 [node name="Sprite2D6" type="Sprite2D" parent="Road"]
 texture_filter = 1
-position = Vector2(23.5, 0)
-texture = ExtResource("1_xueo2")
+position = Vector2(24, 0)
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 462
 
 [node name="Sprite2D5" type="Sprite2D" parent="Road"]
 texture_filter = 1
-position = Vector2(39, 0)
-texture = ExtResource("1_xueo2")
+position = Vector2(40, 0)
+texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 463

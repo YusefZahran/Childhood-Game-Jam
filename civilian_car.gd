@@ -12,3 +12,12 @@ func _ready():
 func _process(delta):
 	speed = level.speed
 	position.y += speed * delta
+
+func kill():
+	print("entered")
+	level.score +=5
+	queue_free()
+
+
+func _on_despawn_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	area.get_parent().kill()
