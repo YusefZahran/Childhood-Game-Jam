@@ -5,7 +5,7 @@ extends Node2D
 @onready var Car = preload("res://civilian_car.tscn")
 @onready var timer : Timer = $"Timer"
 @onready var score = 0
-
+var pause = false
 var amnt =20
 @export var offset = 20
 var rng = RandomNumberGenerator.new()
@@ -13,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 @onready var speed =255
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	for n in range(-7,amnt):
 		spawnSegment(-(n*offset))
 	spawnCars()
@@ -21,6 +22,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+#	while(!pause):
+#		speed=0
 	pass
 
 func spawnSegment(n):
@@ -45,6 +48,8 @@ func spawnCars():
 
 
 func _on_timer_timeout():
+	if (!pause):
+		pause = true 
 	spawnCars()
 	if (speed < 600):
 		speed += 10

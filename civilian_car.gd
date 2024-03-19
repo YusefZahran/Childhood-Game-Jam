@@ -14,8 +14,7 @@ func _process(delta):
 	position.y += speed * delta
 
 func kill():
-	print("entered")
-	level.score +=5
+	level.score +=10
 	queue_free()
 
 
