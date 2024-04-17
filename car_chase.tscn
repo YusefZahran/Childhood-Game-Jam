@@ -2,21 +2,33 @@
 
 [ext_resource type="Script" path="res://car_chase.gd" id="1_hw11o"]
 [ext_resource type="PackedScene" uid="uid://dygdljn57s6ms" path="res://segements/segment_1.tscn" id="2_0bisj"]
+[ext_resource type="PackedScene" uid="uid://1ttu6tdabpom" path="res://hud.tscn" id="3_tyk61"]
 [ext_resource type="PackedScene" uid="uid://caq4ujq27osce" path="res://police_car.tscn" id="3_xu5jf"]
 [ext_resource type="Script" path="res://despawn area.gd" id="4_y20er"]
-[ext_resource type="PackedScene" uid="uid://cm7a1o03w3tm8" path="res://civilian_car.tscn" id="5_n66x6"]
+[ext_resource type="PackedScene" uid="uid://cm7a1o03w3tm8" path="res://civilian_car.tscn" id="6_ill3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yv1b5"]
 size = Vector2(387, 23)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhn7b"]
-size = Vector2(118, 76)
 
 [node name="Car Chase" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_hw11o")
 segments = Array[PackedScene]([ExtResource("2_0bisj")])
 offset = 30
 camera = NodePath("Camera2D")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="HUD" parent="UILayer" instance=ExtResource("3_tyk61")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -300.0
+offset_top = -216.0
+offset_right = 300.0
+offset_bottom = 216.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Police Car" parent="." instance=ExtResource("3_xu5jf")]
 z_index = 2
@@ -42,7 +54,7 @@ position = Vector2(-25, -233)
 position = Vector2(-69, -233)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 autostart = true
 
 [node name="despawn area" type="Area2D" parent="."]
@@ -52,14 +64,8 @@ script = ExtResource("4_y20er")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="despawn area"]
 shape = SubResource("RectangleShape2D_yv1b5")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(438, 164)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_fhn7b")
-
-[node name="Civilian Car" parent="." instance=ExtResource("5_n66x6")]
-position = Vector2(425, 3)
+[node name="Civilian Car" parent="." instance=ExtResource("6_ill3w")]
+position = Vector2(554, 4)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_shape_entered" from="despawn area" to="Civilian Car" method="_on_despawn_area_area_shape_entered"]

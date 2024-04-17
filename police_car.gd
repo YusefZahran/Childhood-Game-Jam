@@ -16,6 +16,7 @@ func _process(delta):
 
 func kill():
 	level.speed=0
+	level.game_pause = true
 	print("game over")
 	print("score: " + str(level.score))
 	queue_free()

@@ -3,7 +3,7 @@ extends Node2D
 @export var speed = 50
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	print(position)
+#	print(position)4
 	speed = level.speed
 	position.y += speed * delta
 	if global_position.y > 250:

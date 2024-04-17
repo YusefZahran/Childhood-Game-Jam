@@ -4,16 +4,22 @@ extends Node2D
 @onready var pos : Array[Marker2D] = [$"Far Right" , $"Middle Right", $"Middle Left" , $"Far Left"]
 @onready var Car = preload("res://civilian_car.tscn")
 @onready var timer : Timer = $"Timer"
-@onready var score = 0
-var pause = false
+@onready var hud = $UILayer/HUD
+var score = 0:
+	set(value):
+		score = value
+		#print(score)
+		hud.score = score
+var timer_pause = false
 var amnt =20
 @export var offset = 20
 var rng = RandomNumberGenerator.new()
 @export var camera : Camera2D
 @onready var speed =255
+@onready var game_pause : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	score = 0
 	for n in range(-7,amnt):
 		spawnSegment(-(n*offset))
 	spawnCars()
@@ -24,6 +30,7 @@ func _ready():
 func _process(delta):
 #	while(!pause):
 #		speed=0
+	  
 	pass
 
 func spawnSegment(n):
@@ -48,9 +55,10 @@ func spawnCars():
 
 
 func _on_timer_timeout():
-	if (!pause):
-		pause = true 
-	spawnCars()
-	if (speed < 600):
-		speed += 10
-		timer.wait_time -= 0.02
+	if (!game_pause):
+		if (!timer_pause):
+			timer_pause = true 
+		spawnCars()
+		if (speed < 600):
+			speed += 10
+			timer.wait_time -= 0.02
