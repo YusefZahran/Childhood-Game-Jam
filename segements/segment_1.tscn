@@ -92,3 +92,107 @@ texture = ExtResource("2_bj2lg")
 hframes = 27
 vframes = 18
 frame = 463
+
+[node name="Sprite2D9" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(-72, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 36
+
+[node name="Sprite2D10" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(-88, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 29
+
+[node name="Sprite2D11" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(-104, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D12" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(-120, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D20" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(-136, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D21" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(-152, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D13" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(72, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 36
+
+[node name="Sprite2D14" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(88, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 27
+
+[node name="Sprite2D15" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(104, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D16" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(120, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D17" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(136.5, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 36
+
+[node name="Sprite2D18" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(136, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
+
+[node name="Sprite2D19" type="Sprite2D" parent="Road"]
+texture_filter = 1
+position = Vector2(152.5, 0)
+texture = ExtResource("2_bj2lg")
+hframes = 27
+vframes = 18
+frame = 28
