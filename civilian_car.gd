@@ -1,6 +1,6 @@
 extends StaticBody2D
 @onready var level = $"../"
-
+signal killed
 #var speed = level.speed
 var speed = 50
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +15,8 @@ func _process(delta):
 
 func kill():
 	#print("killed car")
-	level.score +=10
+	#level.score +=10
+	killed.emit()
 	queue_free()
 
 

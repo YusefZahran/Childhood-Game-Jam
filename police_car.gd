@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var level = $"../" 
 var speed = 200
 var acceleration = 300 
+signal killed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -19,5 +20,6 @@ func kill():
 	level.game_pause = true
 	print("game over")
 	print("score: " + str(level.score))
+	killed.emit()
 	queue_free()
 	
