@@ -8,7 +8,8 @@ extends Node2D
 @onready var hud = $UILayer/HUD
 @onready var GOS = $UILayer/GameOverScreen
 @onready var player = $"Police Car"
-var score = 0:
+
+@onready var score = 0:
 	set(value):
 		score = value
 		#print(score)
